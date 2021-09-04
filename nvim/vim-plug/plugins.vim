@@ -18,8 +18,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " C/C++ sytanx higlighting
     Plug 'jackguo380/vim-lsp-cxx-highlight'
+    " Configurable tabline
+    Plug 'itchyny/lightline.vim'
+
+    " Ended up being more distracting
     " Indention guides
-    Plug 'Yggdroot/indentline' 
+    "Plug 'Yggdroot/indentline' 
 
 call plug#end()
 

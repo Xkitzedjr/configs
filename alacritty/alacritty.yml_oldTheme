@@ -41,7 +41,7 @@ scrolling:
 
   # Number of lines the viewport will move for every line scrolled when
   # scrollback is enabled (history > 0).
-  multiplier: 1
+  multiplier: 100
 
   # Faux Scrolling
   #
@@ -84,15 +84,15 @@ tabspaces: 4
 font:
   # Normal (roman) font face
   normal:
-    family: xos4 Terminus
+    family: Liberation Mono
     # The `style` can be specified to pick a specific face.
-    style: Regular
+    #style: Regular
 
   # Bold font face
   bold:
-    family: xos4 Terminus
+    family: Liberation Mono
     # The `style` can be specified to pick a specific face.
-    style: Bold
+    #style: Bold
 
   # Italic font face
   italic:
@@ -101,7 +101,7 @@ font:
     #style: Italic
 
   # Point size
-  size: 12.0
+  size: 18.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -132,32 +132,30 @@ draw_bold_text_with_bright_colors: true
 colors:
   # Default colors
   primary:
-    background: '0x000000'
-    foreground: '0xffffff'
-  #old background: '0x32323f' light grey blue
+    background: '0x32323f'
+    foreground: '0xd0d0d0'
 
   # Normal colors
   normal:
     black:   '0x151515'
-    red:     '0xcc0000'
-    green:   '0x00e500'
-    yellow:  '0xffff00'
-    blue:    '0x4d4dff'
-    magenta: '0xffc0cb'
+    red:     '0xff0335'
+    green:   '0xacc267'
+    yellow:  '0xddb26f'
+    blue:    '0x6fc2ef'
+    magenta: '0xe1a3ee'
     cyan:    '0x12cfc0'
     white:   '0xffffff'
-# old magenta: '0xe1a3ee' dull pin
 
   # Bright colors
   bright:
-    black:   '0xa6a8a1'
-    red:     '0xff0000'
-    green:   '0x00ff00'
-    yellow:  '0xffff00'
-    blue:    '0x0080ff'
-    magenta: '0xff748c'
-    cyan:    '0x00ffff'
-    white:   '0xffffff'
+    black:   '0x4d5243'
+    red:     '0xff0335'
+    green:   '0xacc267'
+    yellow:  '0xddb26f'
+    blue:    '0x6fc2ef'
+    magenta: '0xe1a3ee'
+    cyan:    '0x12cfc0'
+    white:   '0xd1b8b8'
 
 # Visual Bell
 #
@@ -181,7 +179,7 @@ colors:
 #
 # Specifying a `duration` of `0` will disable the visual bell.
 bell:
-  animation: EaseOut
+  animation: EaseOutExpo
   duration: 0
 
 # Background opacity
@@ -220,12 +218,12 @@ mouse:
   # If this is `true`, the cursor is temporarily hidden when typing.
   hide_when_typing: true
 
-  #url:
+  url:
     # URL launcher
     #
     # This program is executed when clicking on a text which is recognized as a URL.
     # The URL is always added to the command as the last parameter.
-    #launcher: xdg-open
+    launcher: xdg-open
 
     # URL modifiers
     #
@@ -239,9 +237,9 @@ selection:
   # When set to `true`, selected text will be copied to both the primary and
   # the selection clipboard. Otherwise, it will only be copied to the selection
   # clipboard.
-  save_to_clipboard: true
+  save_to_clipboard: false
 
-dynamic_title: true
+dynamic_title: false
 
 cursor:
   # Cursor style
@@ -332,11 +330,6 @@ shell:
 #   - ClearHistory
 #   - Hide
 #   - Quit
-
-key_bindings:
-  - { key: J, mods: Alt, action: ScrollPageDown }
-  - { key: K, mods: Alt, action: ScrollPageUp }
-  - { key: Return, mods: Control|Shift, action: SpawnNewInstance }
 #
 # Values for `command`:
 #   The `command` field must be a map containing a `program` string and
