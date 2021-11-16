@@ -84,24 +84,24 @@ tabspaces: 4
 font:
   # Normal (roman) font face
   normal:
-    family: xos4 Terminus
+    family: Hack
     # The `style` can be specified to pick a specific face.
     style: Regular
 
   # Bold font face
   bold:
-    family: xos4 Terminus
+    family: Hack
     # The `style` can be specified to pick a specific face.
     style: Bold
 
   # Italic font face
   italic:
-    family: Liberation Mono
+    family: Hack
     # The `style` can be specified to pick a specific face.
     #style: Italic
 
   # Point size
-  size: 12.0
+  size: 13.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -132,7 +132,7 @@ draw_bold_text_with_bright_colors: true
 colors:
   # Default colors
   primary:
-    background: '0x000000'
+    background: '0x04062d'
     foreground: '0xffffff'
   #old background: '0x32323f' light grey blue
 
@@ -337,6 +337,8 @@ key_bindings:
   - { key: J, mods: Alt, action: ScrollPageDown }
   - { key: K, mods: Alt, action: ScrollPageUp }
   - { key: Return, mods: Control|Shift, action: SpawnNewInstance }
+  - { key: Plus, mods: Control, action: IncreaseFontSize }
+  - { key: Minus, mods: Control, action: DecreaseFontSize }
 #
 # Values for `command`:
 #   The `command` field must be a map containing a `program` string and

@@ -39,28 +39,29 @@ URxvt.letterSpace: -1
 st.font: xos4 Terminus:size=12
 st.cursorBlink: true
 st.alpha: 0.9
-st.background: #000000
+st.foreground: #f8f8f2
+st.background: #282a36
 !black
-st.color0  : #151515
-st.color8  : #a6a8a1
+st.color0  : #000000
+st.color8  : #000000
 ! red
-st.color1  : #cc0000
-st.color9  : #ff0000
+st.color1  : #ff5555
+st.color9  : #ff5555
 ! green
-st.color2  : #00e500
-st.color10 : #00ff00
+st.color2  : #50fa7b
+st.color10 : #50fa7b
 ! yellow
-st.color3  : #ffff00
-st.color11 : #ffff00
+st.color3  : #f1fa8c
+st.color11 : #f1fa8c
 ! blue
-st.color4  : #4d4dff
-st.color12 : #0080ff
+st.color4  : #6272a4
+st.color12 : #6272a4
 ! magenta
-st.color5  : #ffc0cb
-st.color13 : #ff748c
+st.color5  : #bd93f9
+st.color13 : #bd93f9
 ! cyan
-st.color6  : #12cfc0
-st.color14 : #00ffff
+st.color6  : #8be0fd
+st.color14 : #8be0fd
 ! white
 st.color7  : #ffffff
 st.color15 : #ffffff
