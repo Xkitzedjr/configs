@@ -34,6 +34,7 @@ alias em='emacsclient -nw'
 # handy flags
 alias cal='cal -3m'
 alias df='df -h'
+alias du='du -hc'
 alias free='free -m'
 alias make='make -j12'
 
@@ -44,17 +45,19 @@ alias des='cd ~/Desktop'
 alias pic='cd ~/Pictures'
 alias down='cd ~/Downloads'
 alias config='cd ~/.config'
-alias hollywood='cd ~/Documents/personal_projects/hollywood'
+alias hollywood="cd $HOME/Documents/personal_projects/hollywood"
 
 # archival
 alias mktar='tar -cvf'
 alias untar='tar -xvf'
 
 # often used shortcuts
-alias xup='xrdb .Xdefaults'
-alias bashup='source .bashrc'
-alias bup='source .bashrc'
-alias aliases='vi .bash_aliases'
-alias als='vi .bash_aliases'
+alias xup="xrdb $HOME/.Xdefaults"
+alias bashup="source $HOME/.bashrc"
+alias bup="source $HOME/.bashrc"
+alias aliases="vi $HOME/.bash_aliases"
+alias als="vi $HOME/.bash_aliases"
 alias getmusic='youtube-dl -xwq -o "~/Music/%(title)s.%(ext)s"'
-alias clipshot="scrot -s -f '%Y-%m-%d.png' -e 'mv \$n ~/Pictures/screenShot/'"
+alias getmusicv2='yt-dlp -xwq -o "~/Music/%(title)s.%(ext)s"'
+alias clipshot="scrot -s -f '%Y-%m-%d_%Hh-%Mm-%Ss.png' -e 'mv \$n ~/Pictures/screenShot/'"
+alias start="startx ~/.xinitrc"

@@ -69,11 +69,12 @@ function show_my_desktop()
 end
 
 -- This is used later as the default terminal and editor to run.
-dmenu = "dmenu_run -nb -i -l 5 -nb '#ffc0cb' -nf '#000000' -sb '#000000' -sf '#ffc0cb'"
+dmenu = "dmenu_run -nb -i -nb '#ffc0cb' -nf '#000000' -sb '#000000' -sf '#ffc0cb'"
 terminal = "st"
 term2 = "alacritty"
 editor = os.getenv("nvim") or "nano"
 editor_cmd = terminal .. " -e " .. editor
+newwp = "killall wpscript && /home/chris/Pictures/Wallpaper/CURRENT_LIST/wpscript"
 
 -- Default modkey, mod4 is the 'win' key
 modkey = "Mod4"
@@ -175,11 +176,7 @@ mycpu = cpu_widget({width = 70, step_width = 2, step_spacing = 0, color = "#434c
 awful.screen.connect_for_each_screen(function(s)
     -- Each screen has its own tag table.
     -- TODO this is hacky and is hardcoded for my primary setup
-    if (s.index == 1) then
-        awful.tag({ "4", "3", "2", "<-work_stack1", "core", "media_stack1->", "2", "3", "4", "5" }, s, awful.layout.layouts[1])
-    else
-        awful.tag({ "4", "3", "2", "<-helper_stack1", "activefox", "brave", "unifox", "media_stack1->", "2", "3" }, s, awful.layout.layouts[10])
-    end
+    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -278,11 +275,11 @@ globalkeys = gears.table.join(
               {description = "(un)hide everything", group = "screen"}),
 
     -- Standard programs
-    awful.key({ modkey, }, "w", function () awful.util.spawn(wpscript) end,
+    awful.key({ modkey, }, "w", function () awful.spawn.with_shell(newwp) end,
               {description = "random wallpaper", group = "launcher"}),
     awful.key({ modkey, }, "y", function () awful.util.spawn("thunar") end,
               {description = "thunar", group = "launcher"}),
-    awful.key({ modkey, }, "u", function () awful.util.spawn("ranger-launch") end,
+    awful.key({ modkey, }, "u", function () awful.spawn.with_shell("ranger-launch") end,
               {description = "ranger", group = "launcher"}),
     awful.key({ modkey, }, "Return", function () awful.spawn(terminal) end,
               {description = "open st", group = "launcher"}),
@@ -486,9 +483,6 @@ end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
-
--- autostart
-awful.spawn.with_shell("~/.startup.sh")
 
 -- aestetic
 awesome.set_preferred_icon_size(32)

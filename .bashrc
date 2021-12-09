@@ -10,8 +10,8 @@ bind 'set match-hidden-files off' # keep hidden files hidden
 
 # eviro vars
 export PATH=~/.emacs.d/bin/:$PATH       ## dubious
-export PATH=~/bin/:$PATH       ## dubious
-export VISUAL=emacsclient;
+export PATH=~/bin/:$PATH                ## dubious
+#export VISUAL=emacsclient;
 export EDITOR=nvim;
 export ALTERNATE_EDITOR=""
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
