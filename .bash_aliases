@@ -10,7 +10,8 @@ alias l.='exa -a | egrep "^\."'
 alias dirs='dirs -v'
 
 # pacman
-alias pacsyu='sudo pacman -Syyu'
+alias update='sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist&& sudo pacman -Syyu'
+alias p='sudo pacman'
 alias unlock='sudo rm /var/lib/pacman/db.lc'
 alias cleanup='sudo pacman -Rns (pacman -Qtdq)'
 
@@ -21,7 +22,7 @@ alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/p
 alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
 
 # confirm before overwrite
-alias cp="cp -i"
+alias cp="cp -iv"
 alias mv='mv -i'
 alias rm='rm -i'
 
@@ -37,6 +38,9 @@ alias df='df -h'
 alias du='du -hc'
 alias free='free -m'
 alias make='make -j12'
+alias mkdir='mkdir -pv'
+alias ccat='highlight --out-format=ansi'
+alias bat='bat -f'
 
 # navigation
 alias ..='cd ..'
@@ -46,6 +50,7 @@ alias pic='cd ~/Pictures'
 alias down='cd ~/Downloads'
 alias config='cd ~/.config'
 alias hollywood="cd $HOME/Documents/personal_projects/hollywood"
+alias moc="mocp -M ~/.config/moc"
 
 # archival
 alias mktar='tar -cvf'
@@ -57,7 +62,8 @@ alias bashup="source $HOME/.bashrc"
 alias bup="source $HOME/.bashrc"
 alias aliases="vi $HOME/.bash_aliases"
 alias als="vi $HOME/.bash_aliases"
-alias getmusic='youtube-dl -xwq -o "~/Music/%(title)s.%(ext)s"'
-alias getmusicv2='yt-dlp -xwq -o "~/Music/%(title)s.%(ext)s"'
+# alias getmusic='youtube-dl -xwq -o "~/Music/%(title)s.%(ext)s"' youtube-dl was getting throttled
+alias getmusicv='yt-dlp -xw -o "~/Music/%(title)s.%(ext)s"'
 alias clipshot="scrot -s -f '%Y-%m-%d_%Hh-%Mm-%Ss.png' -e 'mv \$n ~/Pictures/screenShot/'"
 alias start="startx ~/.xinitrc"
+alias list-fonts="fc-list -b | grep family: | bat"

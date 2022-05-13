@@ -1,4 +1,10 @@
-LANG=en_US.UTF-8
+################################################
+#   ___  _  _  ___  ___  ___  ___  ___  _____  #
+#  / __|| || || _ \|_ _|/ __|| _ \|_ _||_   _| #
+# | (__ | __ ||   / | | \__ \|  _/ | |   | |   #
+#  \___||_||_||_|_\|___||___/|_|  |___|  |_|   #
+#                                              #
+################################################
 
 # tab completion case insensitivity
 if [ ! -a ~/.inputrc ]; then 
@@ -11,14 +17,19 @@ bind 'set match-hidden-files off' # keep hidden files hidden
 # eviro vars
 export PATH=~/.emacs.d/bin/:$PATH       ## dubious
 export PATH=~/bin/:$PATH                ## dubious
-#export VISUAL=emacsclient;
-export EDITOR=nvim;
+export EDITOR=nvim
+export VISUAL=emacsclient
+export READER=zathura
 export ALTERNATE_EDITOR=""
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MYVIMRC="~/.config/nvim/init.vim"
 export GOPATH=$HOME/.go
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
+
+# vi mode
+# set -o vi
 
 
 HISTCONTROL=ignoreboth # don't put duplicate lines or lines starting with space in the history.
