@@ -4,8 +4,8 @@ inoremap <expr> <c-k> ("\<C-p>")
 
 " Use alt + hjkl to resize windows
 " TODO These conflict with st
-nnoremap <C-Up>    :resize -2<CR>
-nnoremap <C-Down>  :resize +2<CR>
+nnoremap <C-Down>    :resize -2<CR>
+nnoremap <C-Up>  :resize +2<CR>
 nnoremap <C-Right> :vertical resize -2<CR>
 nnoremap <C-Left>  :vertical resize +2<CR>
 nnoremap <M-=> <C-w>=
@@ -51,6 +51,7 @@ noremap <Leader>ff :NERDTreeToggle <Enter>
 " TODO should figure out how to toggle term with this
 noremap <Leader>tt :bo sp <bar> :res 6 <bar> :term <Enter>
 noremap <Leader>qt :bd! term<C-a><Enter>
+tmap <C-q> <Esc>:bd! term<C-a><Enter>
 
 " Easier map navigation
-noremap <Leader>m `
+noremap <Leader>n `

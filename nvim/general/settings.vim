@@ -46,6 +46,16 @@ set clipboard=unnamedplus               " Copy paste between vim and everything 
 set fillchars+=vert:v                   " Set the vertical split character
 set noshowmode                          " We don't need to see things like -- INSERT -- anymore bc of powerline
 
+augroup neovim_terminal
+    autocmd!
+    " Enter Terminal-mode (insert) automatically
+    autocmd TermOpen * startinsert
+    " Disables number lines on terminal buffers
+    autocmd TermOpen * :set nonumber norelativenumber
+    " allows you to use Ctrl-c on terminal window
+    autocmd TermOpen * nnoremap <buffer> <C-c> i<C-c>
+augroup END
+
 " Testing
 set cursorline                         " Enable highlighting of the current line
 highlight CursorLine cterm=NONE ctermbg=237
