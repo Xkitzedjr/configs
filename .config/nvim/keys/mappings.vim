@@ -32,6 +32,11 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Tab Navigation
+noremap <Leader>to :tab new<CR>
+noremap <Leader>tn :tabn<CR>
+noremap <Leader>tp :tabp<CR>
+
 " TODO I don't remember what these do (FUZZY mode?)
 " Apparently some CoC thing
 "nnoremap <Leader>o o<Esc>^Da
@@ -51,3 +56,6 @@ tmap <C-q> <Esc>:bd! term<C-a><Enter>
 
 " Easier map navigation
 noremap <Leader>n `
+
+" Jump to config
+noremap <leader>fg :Explore $HOME/.config/nvim <CR>
