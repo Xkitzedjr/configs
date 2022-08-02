@@ -267,9 +267,9 @@ globalkeys = gears.table.join(
               {description = "swap with next client by index", group = "client"}),
     awful.key({ modkey, "Shift" }, "k", function () awful.client.swap.byidx( -1) end,
               {description = "swap with previous client by index", group = "client"}),
-    awful.key({ modkey, }, "g", function () awful.screen.focus_relative( 1) end,
+    awful.key({ modkey, }, "i", function () awful.screen.focus_relative( 1) end,
               {description = "focus the next screen", group = "screen"}),
-    awful.key({ modkey, }, "Down", function () awful.screen.focus_relative(-1) end,
+    awful.key({ modkey, }, "u", function () awful.screen.focus_relative(-1) end,
               {description = "focus the previous screen", group = "screen"}),
     awful.key({ modkey, "Shift"}, "w", function () show_my_desktop() end,
               {description = "(un)hide everything", group = "screen"}),
@@ -277,10 +277,6 @@ globalkeys = gears.table.join(
     -- Standard programs
     awful.key({ modkey, }, "w", function () awful.spawn.with_shell(newwp) end,
               {description = "random wallpaper", group = "launcher"}),
-    awful.key({ modkey, }, "y", function () awful.util.spawn("thunar") end,
-              {description = "thunar", group = "launcher"}),
-    awful.key({ modkey, }, "u", function () awful.spawn.with_shell("ranger-launch") end,
-              {description = "ranger", group = "launcher"}),
     awful.key({ modkey, }, "Return", function () awful.spawn(terminal) end,
               {description = "open st", group = "launcher"}),
     awful.key({ modkey, }, ";", function () awful.spawn(term2) end,
@@ -298,9 +294,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey, }, "space", function () awful.layout.inc( 1)                end,
               {description = "select next", group = "layout"}),
     awful.key({ modkey }, "r", function () awful.util.spawn(dmenu) end,
-              {description = "dmenu", group = "launcher"}),
-    awful.key({ modkey }, "b", function () awful.util.spawn("firefox") end,
-	    	{description = "run firefox", group = "client"})
+              {description = "dmenu", group = "launcher"})
 )
 
 clientkeys = gears.table.join(
