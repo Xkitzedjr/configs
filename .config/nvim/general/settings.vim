@@ -34,7 +34,6 @@ set expandtab                           " Converts tabs to spaces
 set smartindent                         " Makes indenting smart
 set autoindent                          " Good auto indent
 set laststatus=2                        " Always display the status line
-set number relativenumber               " Relative line numbers
 set background=dark                     " tell vim what the background color looks like
 set showtabline=2                       " Always show tabs
 set nobackup                            " This is recommended by coc
@@ -45,6 +44,14 @@ set formatoptions=cro                   " Stop newline continution of comments
 set clipboard=unnamedplus               " Copy paste between vim and everything else
 set fillchars+=vert:v                   " Set the vertical split character
 set noshowmode                          " We don't need to see things like -- INSERT -- anymore bc of powerline
+
+" Dynamic numbering
+set number
+augroup numbertoggle
+    autocmd!
+    autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
+    autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
+augroup END
 
 augroup neovim_terminal
     autocmd!
